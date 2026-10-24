@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cloud Phone</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #0b1020;
+      color: white;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+    }
+    .phone {
+      width: min(100%, 360px);
+      height: 650px;
+      max-height: 85vh;
+      border: 5px solid #30394b;
+      border-radius: 30px;
+      overflow: hidden;
+      background: linear-gradient(145deg, #182e58, #432b65);
+      display: flex;
+      flex-direction: column;
+    }
+    .status {
+      padding: 14px 18px;
+      display: flex;
+      justify-content: space-between;
+      background: #101a32;
+      font-size: 13px;
+    }
+    header { padding: 22px 18px; }
+    header h2 { margin: 0 0 5px; }
+    header p { margin: 0; color: #cbd5e1; font-size: 13px; }
+    .screen {
+      flex: 1;
+      margin: 0 12px;
+      border: 1px solid #68799b;
+      border-radius: 18px;
+      padding: 16px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+    }
+    button {
+      padding: 12px 18px;
+      border: 0;
+      border-radius: 12px;
+      background: #8bafff;
+      color: #0b1020;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    #statusText { font-size: 13px; color: #dbeafe; }
+    footer { padding: 18px; text-align: center; color: #cbd5e1; }
+  </style>
+</head>
+<body>
+  <main class="phone">
+    <div class="status">
+      <span>Cloud Phone</span>
+      <span>Web • Online</span>
+    </div>
+    <header>
+      <h2>Cloud Phone ☁️</h2>
+      <p>Android virtual melalui browser</p>
+    </header>
+    <section class="screen">
+      <div style="font-size:56px">📱</div>
+      <h3>Android Cloud</h3>
+      <p id="statusText">
+        Antarmuka siap. Server Android belum terhubung.
+      </p>
+      <button id="connect">Periksa koneksi</button>
+    </section>
+    <footer>Proyek Cloud Phone • Web Edition</footer>
+  </main>
+  <script>
+    document.getElementById("connect").onclick = () => {
+      document.getElementById("statusText").textContent =
+        "Website berjalan, tetapi server Android belum dipasang.";
+    };
+  </script>
+</body>
+</html>
